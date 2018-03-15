@@ -52,6 +52,9 @@ var mapFilterAndReduce = arr => arr
 Example:
     createStudentObj('Elie', 'Schoppik') // {firstName: 'Elie', lastName: 'Schoppik'}
 */
+var createStudentObj = (firstName, lastName) => {
+  return {firstname, lastName}
+}
 
 /* 5 - Given the following code: 
 
@@ -68,4 +71,11 @@ Refactor this code to use arrow functions to make sure that in 1000 milliseconds
     }
 
 */
-
+var instructor = {
+  firstName: 'Colt',
+  sayHi: function(){
+    setTimeout(()=>{
+      console.log('Hello ' + this.firstName)
+    }, 1000)
+  }
+}
