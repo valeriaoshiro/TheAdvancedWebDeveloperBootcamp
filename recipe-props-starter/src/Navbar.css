@@ -1,0 +1,16 @@
+.nav {
+    background: #2c3e50;
+    color: white;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav ul {
+    display: flex;
+}
+
+.nav ul li {
+   list-style: none;
+   margin: 0 10px 0 10px;
+}
