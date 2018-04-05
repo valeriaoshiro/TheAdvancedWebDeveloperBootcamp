@@ -1,0 +1,12 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    background: #426caf;
+    align-items: center;
+    padding: 5px 100px;
+}
+
+.nav ul {
+    list-style-type: none;
+}
