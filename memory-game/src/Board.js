@@ -4,7 +4,9 @@ import './Board.css';
 
 class Board extends Component {
   render() {
-    const squares = Array(16).fill(<Square />);
+    const squares = this.props.cards.map((c, i) => {
+                       return <Square key={c.id} {...c} />
+                   })
     
     return (
       <div className="board">
