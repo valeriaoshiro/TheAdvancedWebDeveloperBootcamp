@@ -20,8 +20,8 @@ function shuffle(array) {
 }
 
 const CardState = {
-  HIDING: 1,
-  SHOWING: 0,
+  HIDING: 0,
+  SHOWING: 1,
   MATCHING: 2
 }
 
@@ -51,6 +51,7 @@ class App extends Component {
     this.state = {cards: shuffle(cards)};
     
     this.handleNew = this.handleNew.bind(this);
+    this.handleColor = this.handleColor.bind(this);
   }
   
   handleNew(){this.setState((prevState, props) => {
@@ -62,6 +63,18 @@ class App extends Component {
     });
   }
   
+  handleColor(squareId){
+    this.setState((prevState, props) => {
+        let updateCard = prevState.cards.find(c => c.id === squareId);
+        if(updateCard.cardState === 1){
+          updateCard.cardState = 0;
+        } else {
+          updateCard.cardState = 1;
+        }
+        return {...prevState.cards, updateCard}
+    });
+  }
+  
   render() {
     return (
       <div className="App">
@@ -70,6 +83,7 @@ class App extends Component {
         />
         <Board 
           cards={this.state.cards}
+          onColor={this.handleColor}
         />
       </div>
     );
