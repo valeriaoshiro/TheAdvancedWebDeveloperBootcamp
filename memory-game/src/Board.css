@@ -4,6 +4,6 @@
     justify-content: space-around;
     align-content: space-between;
     padding: 5px 100px;
-    width: calc(100px * 8);
+    /*width: calc(100px * 8);*/
     margin: 0 auto;
 }

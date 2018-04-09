@@ -54,22 +54,21 @@ class App extends Component {
     this.handleColor = this.handleColor.bind(this);
   }
   
-  handleNew(){this.setState((prevState, props) => {
-      let newCards = shuffle(prevState.cards);
-      return newCards.map(c => {
-        return {...c, cardState: CardState.HIDING}
-        
-      })
-    });
+  handleNew(){
+    let cards = this.state.cards.map(c => {
+      return {...c, cardState: CardState.HIDING}
+    })
+    cards = shuffle(cards);  
+    this.setState({cards});
   }
   
   handleColor(squareId){
     this.setState((prevState, props) => {
         let updateCard = prevState.cards.find(c => c.id === squareId);
-        if(updateCard.cardState === 1){
-          updateCard.cardState = 0;
+        if(updateCard.cardState === CardState.HIDING){
+          updateCard.cardState = CardState.MATCHING;
         } else {
-          updateCard.cardState = 1;
+          updateCard.cardState = CardState.HIDING;
         }
         return {...prevState.cards, updateCard}
     });
