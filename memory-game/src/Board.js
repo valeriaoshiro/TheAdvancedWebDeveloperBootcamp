@@ -5,7 +5,7 @@ import './Board.css';
 class Board extends Component {
   render() {
     const squares = this.props.cards.map((c, i) => {
-                       return <Square key={c.id} {...c} onColor={this.props.onColor} />
+                       return <Square key={c.id} {...c} onClick={this.props.onClick} />
                    })
     
     return (

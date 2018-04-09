@@ -3,15 +3,15 @@ import './Square.css';
 
 class Square extends Component {
   static defaultProps = {
-    onColor(){}
+    onClick(){}
   }
   render() {
-    const {id, cardState, backgroundColor, onColor} = this.props;
+    const {id, cardState, backgroundColor, onClick} = this.props;
     return (
       <div 
         className="square" 
         style={cardState === 0 ? {backgroundColor: 'gray'} : {backgroundColor}} 
-        onClick={() => onColor(id)}
+        onClick={() => onClick(id)}
       />
     );
   }
