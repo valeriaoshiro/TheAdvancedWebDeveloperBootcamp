@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+const APIURL = '/api/todos';
 
 class TodoList extends Component {
   constructor(props){
@@ -9,8 +10,11 @@ class TodoList extends Component {
   }
   
   componentDidMount(){
-    const countriesURL = '/api/todos';
-    fetch(countriesURL)
+    this.loadTodos();
+  }
+  
+  loadTodos(){
+    fetch(APIURL)
     .then(resp => {
       if(!resp.ok){
         if(resp.status >= 400 && resp.status < 500){
